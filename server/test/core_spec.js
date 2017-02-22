@@ -113,46 +113,33 @@ describe('app logic', () => {
 
         it('creates a result of voting for selected entry', () => {
             const state = Map({
-                vote: Map({
-                    pair: List.of('Title 1', 'Title 2')
-                }),
-                entries: List()
+                pair: List.of('Trainspotting', '28 Days Later')
             });
-            const nextState = vote(state, 'Title 1');
+            const nextState = vote(state, 'Trainspotting')
             expect(nextState).to.equal(Map({
-                vote: Map({
-                    pair: List.of('Title 1', 'Title 2'),
-                    tally: Map({
-                        'Title 1': 1
-                    })
-                }),
-                entries: List()
+                pair: List.of('Trainspotting', '28 Days Later'),
+                tally: Map({
+                    'Trainspotting': 1
+                })
             }));
         });
 
         it('adds voting point to existing results for selected entry', () => {
             const state = Map({
-                vote: Map({
-                    pair: List.of('Title 1', 'Title 2'),
-                    tally: Map({
-                        'Title 1': 3,
-                        'Title 2': 2
-                    })
-                }),
-                entries: List()
+                pair: List.of('Trainspotting', '28 Days Later'),
+                tally: Map({
+                    'Trainspotting': 3,
+                    '28 Days Later': 2
+                })
             });
-            const nextState = vote(state, 'Title 1');
+            const nextState = vote(state, 'Trainspotting');
             expect(nextState).to.equal(Map({
-                vote: Map({
-                    pair: List.of('Title 1', 'Title 2'),
-                    tally: Map({
-                        'Title 1': 4,
-                        'Title 2': 2
-                    })
-                }),
-                entries: List()
+                pair: List.of('Trainspotting', '28 Days Later'),
+                tally: Map({
+                    'Trainspotting': 4,
+                    '28 Days Later': 2
+                })
             }));
         });
-
     });
 });

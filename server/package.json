@@ -1,29 +1,32 @@
 {
-    "scripts": {
-        "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
-        "test:watch": "npm run test -- --watch"
-    },
-    "name": "server",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "babel-cli": "^6.23.0",
-        "babel-core": "^6.23.1",
-        "babel-preset-env": "^1.1.8",
-        "chai": "^3.5.0",
-        "chai-immutable": "^1.6.0",
-        "mocha": "^3.2.0"
-    },
-    "babel": {
-        "presets": [
-            "env"
-        ]
-    },
-    "dependencies": {
-        "immutable": "^3.8.1"
-    }
+  "scripts": {
+    "start": "babel-node index.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
+    "test:watch": "npm run test -- --watch"
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-preset-env": "^1.1.8",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
+    "mocha": "^3.2.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "redux": "^3.6.0",
+    "socket.io": "^1.7.3"
+  }
 }
